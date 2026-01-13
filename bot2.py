@@ -1,6 +1,6 @@
 from telegram.ext import Application, MessageHandler, filters
 
-BOT2_TOKEN = 8164514482:AAG2Jtb2a7sMEGGLJ5Huk7Q-kRkRKz5dWww
+BOT2_TOKEN = "8164514482:AAG2Jtb2a7sMEGGLJ5Huk7Q-kRkRKz5dWww"
 GROUP_B = -1003624477633
 GROUP_C = -1003551352561
 
