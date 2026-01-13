@@ -1,26 +1,24 @@
 from telegram.ext import Application, MessageHandler, filters
 
-BOT2_TOKEN = "8164514482:AAG2Jtb2a7sMEGG LJ5Huk7Q-kRkRKz5dWww"
+BOT2_TOKEN = "8164514482:AAF8-pgWnIG7HoYh4dWx2wM9rMxctmrn6Q8"
+GROUP_B = -1003624477633
+GROUP_C = -1003551352561
 
-GROUP_B = -1003624477633   # Group B
-GROUP_C = -1003551352561   # Group C
+TAG = "[BOT2]"
 
 async def forward(update, context):
     msg = update.message
     if not msg:
         return
 
-    # Ignore messages sent by THIS bot itself
-    if msg.from_user and msg.from_user.username == context.bot.username:
+    text = msg.text or msg.caption or ""
+    if TAG in text:
         return
 
-    text = msg.text or msg.caption or ""
-
     if msg.chat_id == GROUP_B:
-        await msg.copy(chat_id=GROUP_C, caption=text)
-
+        await msg.copy(chat_id=GROUP_C, caption=text + " " + TAG)
     elif msg.chat_id == GROUP_C:
-        await msg.copy(chat_id=GROUP_B, caption=text)
+        await msg.copy(chat_id=GROUP_B, caption=text + " " + TAG)
 
 app = Application.builder().token(BOT2_TOKEN).build()
 app.add_handler(MessageHandler(filters.ALL, forward))
