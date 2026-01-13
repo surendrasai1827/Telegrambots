@@ -1,8 +1,8 @@
 from telegram.ext import Application, MessageHandler, filters
 
-BOT2_TOKEN = "YOUR_BOT2_TOKEN"
-GROUP_B = -100BBBBBBBBBB
-GROUP_C = -100CCCCCCCCCC
+BOT2_TOKEN = "8164514482:AAG2Jtb2a7sMEGG LJ5Huk7Q-kRkRKz5dWww"
+GROUP_B = -1003624477633
+GROUP_C = -1003551352561
 
 async def forward(update, context):
     msg = update.message
